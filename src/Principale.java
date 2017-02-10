@@ -104,12 +104,41 @@ public static void tre (){
 			tot=veicolo[i].getPrezzoAcquisto()+tot;
 		}
 	}
-	System.out.print("Il valore totale delle auto presenti in concessionario è"+tot+"€");
+	System.out.print("Il valore totale delle auto presenti in concessionario e':"+tot+"€");
 }
 public static void quattro (){
 	Scanner leggi = new Scanner(System.in);//Scanner 
 	leggi.useDelimiter("\n\r");
-	
+	String findmarca;
+	System.out.println("Inserisci la marca da cercare:");
+	findmarca=leggi.next().toLowerCase();
+	for(int i=0;i<contaAuto;i++){
+		if(veicolo[i].getMarca().equals(findmarca))
+		{
+			System.out.println("E' stata trovata una auto con la marca "+findmarca+".");
+			System.out.println("Targa:"+veicolo[i].getTarga());
+			System.out.println("Modello:"+veicolo[i].getModello());
+			System.out.println("Colore:"+veicolo[i].getColore());
+			System.out.println("Cilindrata:"+veicolo[i].getCilindrata());
+			System.out.println("Velocita' massima:"+veicolo[i].getVelMax());
+			System.out.println("Capacita' serbatoio:"+veicolo[i].getCapserb());
+			System.out.println("Condizioni Motore:"+veicolo[i].getCondizioniMotore());
+			System.out.println("Carburante nel serbatoio:"+veicolo[i].getCarbserb());
+			System.out.println("Km percorsi:"+veicolo[i].getKmPercorsi());
+			System.out.println("Prezzo di acquisto:"+veicolo[i].getPrezzoAcquisto());
+			
+			if(veicolo[i].getPrezzoVendita()!=0){
+				System.out.println("Prezzo di vendita:"+veicolo[i].getPrezzoVendita());
+				System.out.println();
+
+			}
+		}
+		else if(i==contaAuto)
+		{
+			System.out.println("Non ci sono auto di questa marca in archivio.");
+		}
+	}
+		System.out.println();
 }
 public static void cinque (){
 	Scanner leggi = new Scanner(System.in);//Scanner 
@@ -119,18 +148,7 @@ public static void cinque (){
 public static void sei (){
 	Scanner leggi = new Scanner(System.in);//Scanner 
 	leggi.useDelimiter("\n\r");
-	int vendute=0;
-	int concessionario=0;
-	for(int i=0;i<contaAuto;i++){
-		if(veicolo[i].getPrezzoVendita()>0){
-			vendute=vendute+1;
-		}
-		else{
-			concessionario=concessionario+1;
-		}
-	}
-	System.out.print("Le auto presenti nel registro e in concessionario sono: "+concessionario);
-	System.out.print("Le auto presenti nel registro e vendute: "+vendute);
+	
 }
 public static void sette (){
 	Scanner leggi = new Scanner(System.in);//Scanner 
