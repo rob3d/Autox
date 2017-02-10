@@ -19,7 +19,7 @@ public class Auto {
 		return marca;
 	}
 	public void setMarca(String m){
-		marca=m;
+		marca=m.toLowerCase();
 	}
 	private String modello;
 	public String getModello(){

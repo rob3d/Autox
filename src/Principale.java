@@ -140,7 +140,7 @@ public static void quattro (){
 	}
 		System.out.println();
 }
-public static void cinque (){
+public static void cinque (){//da fare
 	Scanner leggi = new Scanner(System.in);//Scanner 
 	leggi.useDelimiter("\n\r");
 	
@@ -148,7 +148,18 @@ public static void cinque (){
 public static void sei (){
 	Scanner leggi = new Scanner(System.in);//Scanner 
 	leggi.useDelimiter("\n\r");
-	
+	int vendute=0;
+	int concessionario=0;
+	for(int i=0;i<contaAuto;i++){
+		if(veicolo[i].getPrezzoVendita()>0){
+			vendute=vendute+1;
+		}
+		else{
+			concessionario=concessionario+1;
+		}
+	}
+	System.out.print("Le auto presenti nel registro e in concessionario sono: "+concessionario);
+	System.out.print("Le auto presenti nel registro e vendute sono: "+vendute);
 }
 public static void sette (){
 	Scanner leggi = new Scanner(System.in);//Scanner 
